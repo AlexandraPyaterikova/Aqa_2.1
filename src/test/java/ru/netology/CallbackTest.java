@@ -14,7 +14,7 @@ public class CallbackTest {
         $("[data-test-id='phone'] input").setValue("+79875336565");
         $("[data-test-id='agreement']").click();
         $(".button__content").click();
-        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена!"));
+        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
     }
 
     @Test
@@ -24,7 +24,7 @@ public class CallbackTest {
         $("[data-test-id='phone'] input").setValue("+79873356565");
         $("[data-test-id='agreement']").click();
         $(".button__content").click();
-        $("[data-test-id=name].input_invalid .input__sub").shouldHave(exactText("Имя и Фамилия указаные неверно: допустимы только русские буквы, пробелы и дефисы."));
+        $("[data-test-id=name].input_invalid .input__sub").shouldHave(exactText("Имя и Фамилия указаные неверно. Допустимы только русские буквы, пробелы и дефисы."));
     }
 
     @Test
@@ -34,7 +34,7 @@ public class CallbackTest {
         $("[data-test-id='phone'] input").setValue("2324435");
         $("[data-test-id='agreement']").click();
         $(".button__content").click();
-        $("[data-test-id=phone].input_invalid .input__sub").shouldHave(exactText("Телефон указан неверно, пример +79012345678."));
+        $("[data-test-id=phone].input_invalid .input__sub").shouldHave(exactText("Телефон указан неверно. Должно быть 11 цифр, например, +79012345678."));
     }
 
     @Test
