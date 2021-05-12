@@ -40,7 +40,7 @@ public class CallbackTest {
     @Test
     void shouldTestEmptyName() {
         open("http://localhost:9999/");
-        $("[data-test-id='phone'] input").setValue("+79872226565");
+        $("[data-test-id='phone'] input").setValue("+79872226535");
         $("[data-test-id='agreement']").click();
         $(".button__content").click();
         $("[data-test-id=name].input_invalid .input__sub").shouldHave(exactText("Поле обязательно для заполнения"));
